@@ -49,7 +49,6 @@ open class ChatInputBar: ReusableXibView {
     @IBOutlet weak var scrollView: HorizontalStackScrollView!
     @IBOutlet weak var textView: ExpandableTextView!
     @IBOutlet weak var sendButton: UIButton!
-    @IBOutlet weak var topBorderHeightConstraint: NSLayoutConstraint!
 
     @IBOutlet var constraintsForHiddenTextView: [NSLayoutConstraint]!
     @IBOutlet var constraintsForVisibleTextView: [NSLayoutConstraint]!
@@ -71,7 +70,6 @@ open class ChatInputBar: ReusableXibView {
 
     open override func awakeFromNib() {
         super.awakeFromNib()
-        self.topBorderHeightConstraint.constant = 1 / UIScreen.main.scale
         self.textView.scrollsToTop = false
         self.textView.delegate = self
         self.textView.placeholderDelegate = self
