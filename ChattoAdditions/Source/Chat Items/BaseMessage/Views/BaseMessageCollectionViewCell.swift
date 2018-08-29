@@ -248,6 +248,7 @@ open class BaseMessageCollectionViewCell<BubbleViewType>: UICollectionViewCell, 
         self.avatarView.bma_rect = layout.avatarViewFrame
         self.avatarView.layer.cornerRadius = self.avatarView.frame.size.width / 2
         self.avatarView.clipsToBounds = true
+        self.avatarView.contentMode = .scaleAspectFill
         self.selectionIndicator.bma_rect = layout.selectionIndicatorFrame
 
         if self.accessoryTimestampView.superview != nil {
