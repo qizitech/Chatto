@@ -61,7 +61,7 @@ open class BaseChatViewController: UIViewController, UICollectionViewDataSource,
             self.setChatDataSource(newValue, triggeringUpdateType: .normal)
         }
     }
- 
+
     // If set to false messages will start appearing on top and goes down
     // If true then messages will start from bottom and goes up.
     public var placeMessagesFromBottom = false {
@@ -140,7 +140,7 @@ open class BaseChatViewController: UIViewController, UICollectionViewDataSource,
         self.collectionView.showsHorizontalScrollIndicator = false
         self.collectionView.allowsSelection = false
         self.collectionView.translatesAutoresizingMaskIntoConstraints = false
-        self.collectionView.autoresizingMask = UIViewAutoresizing()
+        self.collectionView.autoresizingMask = []
         self.view.addSubview(self.collectionView)
         self.view.addConstraint(NSLayoutConstraint(item: self.view, attribute: .top, relatedBy: .equal, toItem: self.collectionView, attribute: .top, multiplier: 1, constant: 0))
         self.view.addConstraint(NSLayoutConstraint(item: self.view, attribute: .leading, relatedBy: .equal, toItem: self.collectionView, attribute: .leading, multiplier: 1, constant: 0))
@@ -162,7 +162,7 @@ open class BaseChatViewController: UIViewController, UICollectionViewDataSource,
     private var inputContainerBottomConstraint: NSLayoutConstraint!
     private func addInputViews() {
         self.inputContainer = UIView(frame: CGRect.zero)
-        self.inputContainer.autoresizingMask = UIViewAutoresizing()
+        self.inputContainer.autoresizingMask = []
         self.inputContainer.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(self.inputContainer)
         self.view.addConstraint(NSLayoutConstraint(item: self.inputContainer, attribute: .top, relatedBy: .greaterThanOrEqual, toItem: self.topLayoutGuide, attribute: .bottom, multiplier: 1, constant: 0))
@@ -181,7 +181,7 @@ open class BaseChatViewController: UIViewController, UICollectionViewDataSource,
 
     private func addBottomSpaceView() {
         self.bottomSpaceView = UIView(frame: CGRect.zero)
-        self.bottomSpaceView.autoresizingMask = UIViewAutoresizing()
+        self.bottomSpaceView.autoresizingMask = []
         self.bottomSpaceView.translatesAutoresizingMaskIntoConstraints = false
         self.bottomSpaceView.backgroundColor = UIColor.white
         self.view.addSubview(self.bottomSpaceView)
@@ -205,7 +205,7 @@ open class BaseChatViewController: UIViewController, UICollectionViewDataSource,
             } else {
                 navigatedController = self
             }
-            
+
             if navigatedController.hidesBottomBarWhenPushed && (navigationController?.viewControllers.count ?? 0) > 1 && navigationController?.viewControllers.last == navigatedController {
                 self.inputContainerBottomConstraint.constant = 0
             } else {
@@ -272,7 +272,7 @@ open class BaseChatViewController: UIViewController, UICollectionViewDataSource,
 
         let needToPlaceMessagesAtBottom = self.placeMessagesFromBottom && self.allContentFits
         if needToPlaceMessagesAtBottom {
-            let realContentHeight = contentSize.height + newInsetTop + newInsetBottom;
+            let realContentHeight = contentSize.height + newInsetTop + newInsetBottom
             newInsetTop += self.collectionView.bounds.height - realContentHeight
         }
 

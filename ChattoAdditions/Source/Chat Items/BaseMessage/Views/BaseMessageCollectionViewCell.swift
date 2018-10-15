@@ -407,7 +407,7 @@ open class BaseMessageCollectionViewCell<BubbleViewType>: UICollectionViewCell, 
     }
 }
 
-fileprivate struct Layout {
+private struct Layout {
     private (set) var size = CGSize.zero
     private (set) var failedButtonFrame = CGRect.zero
     private (set) var bubbleViewFrame = CGRect.zero
@@ -502,7 +502,7 @@ fileprivate struct Layout {
     }
 }
 
-fileprivate struct LayoutParameters {
+private struct LayoutParameters {
     let containerWidth: CGFloat
     let horizontalMargin: CGFloat
     let horizontalInterspacing: CGFloat
