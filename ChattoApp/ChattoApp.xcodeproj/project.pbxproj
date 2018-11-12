@@ -398,7 +398,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ChattoApp/Pods-ChattoApp-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-ChattoApp/Pods-ChattoApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Chatto/Chatto.framework",
 				"${BUILT_PRODUCTS_DIR}/ChattoAdditions/ChattoAdditions.framework",
 			);
@@ -409,7 +409,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChattoApp/Pods-ChattoApp-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChattoApp/Pods-ChattoApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5BF0DC46EA4D63FE5A83101A /* [CP] Check Pods Manifest.lock */ = {
