@@ -68,7 +68,7 @@ final class PhotosInputDataProvider: NSObject, PhotosInputDataProviderProtocol, 
             let options = PHFetchOptions()
             options.sortDescriptors = [ NSSortDescriptor(key: "creationDate", ascending: false) ]
             options.predicate = predicate
-            options.includeAssetSourceTypes = PHAssetSourceTypeUserLibrary
+            options.includeAssetSourceTypes = .typeUserLibrary
             return options
         }
 
