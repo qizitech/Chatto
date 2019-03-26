@@ -28,6 +28,7 @@ import Chatto
 public protocol BaseMessageCollectionViewCellStyleProtocol {
     func avatarSize(viewModel: MessageViewModelProtocol) -> CGSize // .zero => no avatar
     func avatarVerticalAlignment(viewModel: MessageViewModelProtocol) -> VerticalAlignment
+    func avatarImageViewSetup(viewModel: MessageViewModelProtocol) -> AvatarImageViewSetup?
     var failedIcon: UIImage { get }
     var failedIconHighlighted: UIImage { get }
     var selectionIndicatorMargins: UIEdgeInsets { get }
@@ -232,6 +233,9 @@ open class BaseMessageCollectionViewCell<BubbleViewType>: UICollectionViewCell, 
         let avatarImageSize = style.avatarSize(viewModel: viewModel)
         if avatarImageSize != .zero {
             self.avatarView.image = viewModel.avatarImage.value
+            if let setup = baseStyle.avatarImageViewSetup(viewModel: messageViewModel) {
+                setup(self.avatarView)
+            }
         }
     }
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1000"
+   LastUpgradeVersion = "1020"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F3B3A79B2EF929FE3E146E8B922BFFF3"
+               BlueprintIdentifier = "CD38AA83EE08B06E36CF46952C001589"
                BuildableName = "Chatto.framework"
                BlueprintName = "Chatto"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F3B3A79B2EF929FE3E146E8B922BFFF3"
+            BlueprintIdentifier = "CD38AA83EE08B06E36CF46952C001589"
             BuildableName = "Chatto.framework"
             BlueprintName = "Chatto"
             ReferencedContainer = "container:Pods.xcodeproj">
@@ -63,7 +63,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F3B3A79B2EF929FE3E146E8B922BFFF3"
+            BlueprintIdentifier = "CD38AA83EE08B06E36CF46952C001589"
             BuildableName = "Chatto.framework"
             BlueprintName = "Chatto"
             ReferencedContainer = "container:Pods.xcodeproj">

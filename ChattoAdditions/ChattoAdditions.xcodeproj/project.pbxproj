@@ -36,6 +36,7 @@
 		55ABA5711FC74DB400923302 /* UIView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ABA5701FC74DB400923302 /* UIView+Additions.swift */; };
 		55ABA5731FC74E0400923302 /* UIEdgeInets+AdditionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ABA5721FC74E0400923302 /* UIEdgeInets+AdditionsTests.swift */; };
 		55ABA5771FC74F8D00923302 /* ObservableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ABA5761FC74F8D00923302 /* ObservableTests.swift */; };
+		BBC42599224A0FF100002DE3 /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC42598224A0FF100002DE3 /* AvatarImageView.swift */; };
 		C33DEA451D23F825002AAD26 /* LiveCameraCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33DEA441D23F825002AAD26 /* LiveCameraCellPresenter.swift */; };
 		C33DEA471D23F8C8002AAD26 /* LiveCameraCaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33DEA461D23F8C8002AAD26 /* LiveCameraCaptureSession.swift */; };
 		C35FE3C51C0331CF00D42980 /* TextMessagePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35FE3C41C0331CF00D42980 /* TextMessagePresenterTests.swift */; };
@@ -159,6 +160,7 @@
 		55ABA5701FC74DB400923302 /* UIView+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Additions.swift"; sourceTree = "<group>"; };
 		55ABA5721FC74E0400923302 /* UIEdgeInets+AdditionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInets+AdditionsTests.swift"; sourceTree = "<group>"; };
 		55ABA5761FC74F8D00923302 /* ObservableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableTests.swift; sourceTree = "<group>"; };
+		BBC42598224A0FF100002DE3 /* AvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
 		C33DEA441D23F825002AAD26 /* LiveCameraCellPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveCameraCellPresenter.swift; sourceTree = "<group>"; };
 		C33DEA461D23F8C8002AAD26 /* LiveCameraCaptureSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveCameraCaptureSession.swift; sourceTree = "<group>"; };
 		C35FE3C41C0331CF00D42980 /* TextMessagePresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextMessagePresenterTests.swift; path = "Tests/Chat Items/TextMessages/TextMessagePresenterTests.swift"; sourceTree = SOURCE_ROOT; };
@@ -509,6 +511,7 @@
 			isa = PBXGroup;
 			children = (
 				C3C0CC1E1BFE496A0052747C /* CircleProgressIndicatorView */,
+				BBC42598224A0FF100002DE3 /* AvatarImageView.swift */,
 			);
 			path = "UI Components";
 			sourceTree = "<group>";
@@ -789,6 +792,7 @@
 				C3C0CC5E1BFE496A0052747C /* PhotosInputView.swift in Sources */,
 				CDC60FFD1FD7259200C2588E /* PhotosInputPlaceholderCell.swift in Sources */,
 				55ABA5541FC739C300923302 /* Alignment.swift in Sources */,
+				BBC42599224A0FF100002DE3 /* AvatarImageView.swift in Sources */,
 				C3C0CC431BFE496A0052747C /* TextMessageCollectionViewCellDefaultStyle.swift in Sources */,
 				C3C0CC521BFE496A0052747C /* ChatInputBarPresenter.swift in Sources */,
 				C3C0CC401BFE496A0052747C /* TextBubbleView.swift in Sources */,
