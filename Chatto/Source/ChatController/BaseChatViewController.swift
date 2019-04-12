@@ -186,7 +186,7 @@ open class BaseChatViewController: UIViewController, UICollectionViewDataSource,
         self.inputBarContainer = UIView(frame: CGRect.zero)
         self.inputBarContainer.autoresizingMask = UIView.AutoresizingMask()
         self.inputBarContainer.translatesAutoresizingMaskIntoConstraints = false
-        self.inputBarContainer.backgroundColor = .white
+        self.inputBarContainer.backgroundColor = .clear
         self.view.addSubview(self.inputBarContainer)
         self.view.addConstraint(NSLayoutConstraint(item: self.inputBarContainer, attribute: .top, relatedBy: .greaterThanOrEqual, toItem: self.topLayoutGuide, attribute: .bottom, multiplier: 1, constant: 0))
         self.view.addConstraint(NSLayoutConstraint(item: self.view, attribute: .leading, relatedBy: .equal, toItem: self.inputBarContainer, attribute: .leading, multiplier: 1, constant: 0))
@@ -208,7 +208,7 @@ open class BaseChatViewController: UIViewController, UICollectionViewDataSource,
         self.inputContentContainer = UIView(frame: CGRect.zero)
         self.inputContentContainer.autoresizingMask = UIView.AutoresizingMask()
         self.inputContentContainer.translatesAutoresizingMaskIntoConstraints = false
-        self.inputContentContainer.backgroundColor = .white
+        self.inputContentContainer.backgroundColor = .clear
         self.view.addSubview(self.inputContentContainer)
         self.view.addConstraint(NSLayoutConstraint(item: self.inputContentContainer, attribute: .top, relatedBy: .equal, toItem: self.inputBarContainer, attribute: .bottom, multiplier: 1, constant: 0))
         self.view.addConstraint(NSLayoutConstraint(item: self.view, attribute: .leading, relatedBy: .equal, toItem: self.inputContentContainer, attribute: .leading, multiplier: 1, constant: 0))
