@@ -95,7 +95,7 @@ extension DefaultCompoundBubbleViewStyle.BubbleMasks {
     }
 
     public static var `default`: DefaultCompoundBubbleViewStyle.BubbleMasks {
-        let bundle = Bundle(for: DefaultCompoundBubbleViewStyle.self)
+        let bundle = Bundle(path: Bundle(for: DefaultCompoundBubbleViewStyle.self).path(forResource: "ChattoAdditions", ofType: "bundle") ?? "")
         return DefaultCompoundBubbleViewStyle.BubbleMasks(
             incomingTail: UIImage(named: "bubble-incoming-tail", in: bundle, compatibleWith: nil)!,
             incomingNoTail: UIImage(named: "bubble-incoming", in: bundle, compatibleWith: nil)!,

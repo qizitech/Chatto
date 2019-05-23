@@ -35,9 +35,9 @@ open class TextChatInputItem {
 
     public static func createDefaultButtonAppearance() -> TabInputButtonAppearance {
         let images: [UIControlStateWrapper: UIImage] = [
-            UIControlStateWrapper(state: .normal): UIImage(named: "text-icon-unselected", in: Bundle(for: TextChatInputItem.self), compatibleWith: nil)!,
-            UIControlStateWrapper(state: .selected): UIImage(named: "text-icon-selected", in: Bundle(for: TextChatInputItem.self), compatibleWith: nil)!,
-            UIControlStateWrapper(state: .highlighted): UIImage(named: "text-icon-selected", in: Bundle(for: TextChatInputItem.self), compatibleWith: nil)!
+            UIControlStateWrapper(state: .normal): UIImage(named: "text-icon-unselected", in: Bundle(path: Bundle(for: TextChatInputItem.self).path(forResource: "ChattoAdditions", ofType: "bundle") ?? ""), compatibleWith: nil)!,
+            UIControlStateWrapper(state: .selected): UIImage(named: "text-icon-selected", in: Bundle(path: Bundle(for: TextChatInputItem.self).path(forResource: "ChattoAdditions", ofType: "bundle") ?? ""), compatibleWith: nil)!,
+            UIControlStateWrapper(state: .highlighted): UIImage(named: "text-icon-selected", in: Bundle(path: Bundle(for: TextChatInputItem.self).path(forResource: "ChattoAdditions", ofType: "bundle") ?? ""), compatibleWith: nil)!
         ]
         return TabInputButtonAppearance(images: images, size: nil)
     }

@@ -27,7 +27,7 @@ import UIKit
 @objc open class ReusableXibView: UIView {
 
     func loadViewFromNib() -> UIView {
-        let bundle = Bundle(for: type(of: self))
+        let bundle = Bundle(path: Bundle(for: type(of: self)).path(forResource: "ChattoAdditions", ofType: "bundle") ?? "")
         let nib = UINib(nibName: type(of: self).nibName(), bundle: bundle)
         let view = nib.instantiate(withOwner: nil, options: nil).first as! UIView
         return view
@@ -38,7 +38,7 @@ import UIKit
             return self
         }
 
-        let bundle = Bundle(for: type(of: self))
+        let bundle = Bundle(path: Bundle(for: type(of: self)).path(forResource: "ChattoAdditions", ofType: "bundle") ?? "")!
         if let loadedView = bundle.loadNibNamed(type(of: self).nibName(), owner: nil, options: nil)?.first as? UIView {
             loadedView.frame = frame
             loadedView.autoresizingMask = autoresizingMask
