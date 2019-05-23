@@ -58,7 +58,13 @@ open class ChatInputBar: ReusableXibView {
     @IBOutlet var tabBarContainerHeightConstraint: NSLayoutConstraint!
 
     class open func loadNib() -> ChatInputBar {
-        let view = Bundle(path: Bundle(for: self).path(forResource: "ChattoAdditions", ofType: "bundle") ?? "")?.loadNibNamed(self.nibName(), owner: nil, options: nil)!.first as! ChatInputBar
+        var bundle = Bundle(for: self)
+        if let resourcePath = bundle.path(forResource: "ChattoAdditions", ofType: "bundle") {
+            if let resourcesBundle = Bundle(path: resourcePath) {
+                bundle = resourcesBundle
+            }
+        }
+        let view = bundle.loadNibNamed(self.nibName(), owner: nil, options: nil)!.first as! ChatInputBar
         view.translatesAutoresizingMaskIntoConstraints = false
         view.frame = CGRect.zero
         return view

@@ -113,7 +113,14 @@ open class PhotoMessageCollectionViewCellDefaultStyle: PhotoMessageCollectionVie
     }()
 
     lazy private var placeholderIcon: UIImage = {
-        return UIImage(named: "photo-bubble-placeholder-icon", in: Bundle(path: Bundle(for: Class.self).path(forResource: "ChattoAdditions", ofType: "bundle") ?? ""), compatibleWith: nil)!
+        var bundle = Bundle(for: Class.self)
+        if let resourcePath = bundle.path(forResource: "ChattoAdditions", ofType: "bundle") {
+            if let resourcesBundle = Bundle(path: resourcePath) {
+                bundle = resourcesBundle
+            }
+        }
+        
+        return UIImage(named: "photo-bubble-placeholder-icon", in: bundle, compatibleWith: nil)!
     }()
 
     open func maskingImage(viewModel: PhotoMessageViewModelProtocol) -> UIImage {
@@ -175,11 +182,18 @@ open class PhotoMessageCollectionViewCellDefaultStyle: PhotoMessageCollectionVie
 public extension PhotoMessageCollectionViewCellDefaultStyle { // Default values
 
     static public func createDefaultBubbleMasks() -> BubbleMasks {
+        var bundle = Bundle(for: Class.self)
+        if let resourcePath = bundle.path(forResource: "ChattoAdditions", ofType: "bundle") {
+            if let resourcesBundle = Bundle(path: resourcePath) {
+                bundle = resourcesBundle
+            }
+        }
+        
         return BubbleMasks(
-            incomingTail: UIImage(named: "bubble-incoming-tail", in: Bundle(path: Bundle(for: Class.self).path(forResource: "ChattoAdditions", ofType: "bundle") ?? ""), compatibleWith: nil)!,
-            incomingNoTail: UIImage(named: "bubble-incoming", in: Bundle(path: Bundle(for: Class.self).path(forResource: "ChattoAdditions", ofType: "bundle") ?? ""), compatibleWith: nil)!,
-            outgoingTail: UIImage(named: "bubble-outgoing-tail", in: Bundle(path: Bundle(for: Class.self).path(forResource: "ChattoAdditions", ofType: "bundle") ?? ""), compatibleWith: nil)!,
-            outgoingNoTail: UIImage(named: "bubble-outgoing", in: Bundle(path: Bundle(for: Class.self).path(forResource: "ChattoAdditions", ofType: "bundle") ?? ""), compatibleWith: nil)!,
+            incomingTail: UIImage(named: "bubble-incoming-tail", in: bundle, compatibleWith: nil)!,
+            incomingNoTail: UIImage(named: "bubble-incoming", in: bundle, compatibleWith: nil)!,
+            outgoingTail: UIImage(named: "bubble-outgoing-tail", in: bundle, compatibleWith: nil)!,
+            outgoingNoTail: UIImage(named: "bubble-outgoing", in: bundle, compatibleWith: nil)!,
             tailWidth: 6
         )
     }

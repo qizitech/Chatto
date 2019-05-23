@@ -46,10 +46,17 @@ open class PhotosChatInputItem: ChatInputItemProtocol {
     }
 
     public static func createDefaultButtonAppearance() -> TabInputButtonAppearance {
+        var bundle = Bundle(for: Class.self)
+        if let resourcePath = bundle.path(forResource: "ChattoAdditions", ofType: "bundle") {
+            if let resourcesBundle = Bundle(path: resourcePath) {
+                bundle = resourcesBundle
+            }
+        }
+        
         let images: [UIControlStateWrapper: UIImage] = [
-            UIControlStateWrapper(state: .normal): UIImage(named: "camera-icon-unselected", in: Bundle(path: Bundle(for: Class.self).path(forResource: "ChattoAdditions", ofType: "bundle") ?? ""), compatibleWith: nil)!,
-            UIControlStateWrapper(state: .selected): UIImage(named: "camera-icon-selected", in: Bundle(path: Bundle(for: Class.self).path(forResource: "ChattoAdditions", ofType: "bundle") ?? ""), compatibleWith: nil)!,
-            UIControlStateWrapper(state: .highlighted): UIImage(named: "camera-icon-selected", in: Bundle(path: Bundle(for: Class.self).path(forResource: "ChattoAdditions", ofType: "bundle") ?? ""), compatibleWith: nil)!
+            UIControlStateWrapper(state: .normal): UIImage(named: "camera-icon-unselected", in: bundle, compatibleWith: nil)!,
+            UIControlStateWrapper(state: .selected): UIImage(named: "camera-icon-selected", in: bundle, compatibleWith: nil)!,
+            UIControlStateWrapper(state: .highlighted): UIImage(named: "camera-icon-selected", in: bundle, compatibleWith: nil)!
         ]
         return TabInputButtonAppearance(images: images, size: nil)
     }

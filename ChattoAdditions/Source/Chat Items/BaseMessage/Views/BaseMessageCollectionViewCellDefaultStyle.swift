@@ -198,17 +198,29 @@ public extension BaseMessageCollectionViewCellDefaultStyle { // Default values
     }
 
     static public func createDefaultBubbleBorderImages() -> BubbleBorderImages {
+        var bundle = Bundle(for: Class.self)
+        if let resourcePath = bundle.path(forResource: "ChattoAdditions", ofType: "bundle") {
+            if let resourcesBundle = Bundle(path: resourcePath) {
+                bundle = resourcesBundle
+            }
+        }
         return BubbleBorderImages(
-            borderIncomingTail: UIImage(named: "bubble-incoming-border-tail", in: Bundle(path: Bundle(for: Class.self).path(forResource: "ChattoAdditions", ofType: "bundle") ?? ""), compatibleWith: nil)!,
-            borderIncomingNoTail: UIImage(named: "bubble-incoming-border", in: Bundle(path: Bundle(for: Class.self).path(forResource: "ChattoAdditions", ofType: "bundle") ?? ""), compatibleWith: nil)!,
-            borderOutgoingTail: UIImage(named: "bubble-outgoing-border-tail", in: Bundle(path: Bundle(for: Class.self).path(forResource: "ChattoAdditions", ofType: "bundle") ?? ""), compatibleWith: nil)!,
-            borderOutgoingNoTail: UIImage(named: "bubble-outgoing-border", in: Bundle(path: Bundle(for: Class.self).path(forResource: "ChattoAdditions", ofType: "bundle") ?? ""), compatibleWith: nil)!
+            borderIncomingTail: UIImage(named: "bubble-incoming-border-tail", in: bundle, compatibleWith: nil)!,
+            borderIncomingNoTail: UIImage(named: "bubble-incoming-border", in: bundle, compatibleWith: nil)!,
+            borderOutgoingTail: UIImage(named: "bubble-outgoing-border-tail", in: bundle, compatibleWith: nil)!,
+            borderOutgoingNoTail: UIImage(named: "bubble-outgoing-border", in: bundle, compatibleWith: nil)!
         )
     }
 
     static public func createDefaultFailedIconImages() -> FailedIconImages {
+        var bundle = Bundle(for: Class.self)
+        if let resourcePath = bundle.path(forResource: "ChattoAdditions", ofType: "bundle") {
+            if let resourcesBundle = Bundle(path: resourcePath) {
+                bundle = resourcesBundle
+            }
+        }
         let normal = {
-            return UIImage(named: "base-message-failed-icon", in: Bundle(path: Bundle(for: Class.self).path(forResource: "ChattoAdditions", ofType: "bundle") ?? ""), compatibleWith: nil)!
+            return UIImage(named: "base-message-failed-icon", in: bundle, compatibleWith: nil)!
         }
         return FailedIconImages(
             normal: normal(),
@@ -226,10 +238,28 @@ public extension BaseMessageCollectionViewCellDefaultStyle { // Default values
                                                             horizontalTimestampMargin: 11,
                                                             maxContainerWidthPercentageForBubbleView: 0.68)
     }
-
-    private static let selectionIndicatorIconSelected = UIImage(named: "base-message-checked-icon", in: Bundle(path: Bundle(for: Class.self).path(forResource: "ChattoAdditions", ofType: "bundle") ?? ""), compatibleWith: nil)!.bma_tintWithColor(BaseMessageCollectionViewCellDefaultStyle.defaultOutgoingColor)
-    private static let selectionIndicatorIconDeselected = UIImage(named: "base-message-unchecked-icon", in: Bundle(path: Bundle(for: Class.self).path(forResource: "ChattoAdditions", ofType: "bundle") ?? ""), compatibleWith: nil)!.bma_tintWithColor(UIColor.bma_color(rgb: 0xC6C6C6))
-
+    
+    private static var selectionIndicatorIconSelected: UIImage {
+        var bundle = Bundle(for: Class.self)
+        if let resourcePath = bundle.path(forResource: "ChattoAdditions", ofType: "bundle") {
+            if let resourcesBundle = Bundle(path: resourcePath) {
+                bundle = resourcesBundle
+            }
+        }
+        
+        return UIImage(named: "base-message-checked-icon", in: bundle, compatibleWith: nil)!.bma_tintWithColor(BaseMessageCollectionViewCellDefaultStyle.defaultOutgoingColor)
+    }
+    private static var selectionIndicatorIconDeselected: UIImage {
+        var bundle = Bundle(for: Class.self)
+        if let resourcePath = bundle.path(forResource: "ChattoAdditions", ofType: "bundle") {
+            if let resourcesBundle = Bundle(path: resourcePath) {
+                bundle = resourcesBundle
+            }
+        }
+        
+        return UIImage(named: "base-message-unchecked-icon", in: bundle, compatibleWith: nil)!.bma_tintWithColor(UIColor.bma_color(rgb: 0xC6C6C6))
+    }
+    
     static public func createDefaultSelectionIndicatorStyle() -> SelectionIndicatorStyle {
         return SelectionIndicatorStyle(
             margins: UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10),

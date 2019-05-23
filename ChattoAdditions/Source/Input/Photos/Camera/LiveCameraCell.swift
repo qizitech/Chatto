@@ -41,10 +41,17 @@ public struct LiveCameraCellAppearance {
     }
 
     public static func createDefaultAppearance() -> LiveCameraCellAppearance {
+        var bundle = Bundle(for: LiveCameraCell.self)
+        if let resourcePath = bundle.path(forResource: "ChattoAdditions", ofType: "bundle") {
+            if let resourcesBundle = Bundle(path: resourcePath) {
+                bundle = resourcesBundle
+            }
+        }
+        
         return LiveCameraCellAppearance(
             backgroundColor: UIColor(red: 24.0/255.0, green: 101.0/255.0, blue: 245.0/255.0, alpha: 1),
-            cameraImage: UIImage(named: "camera", in: Bundle(path: Bundle(for: LiveCameraCell.self).path(forResource: "ChattoAdditions", ofType: "bundle") ?? ""), compatibleWith: nil),
-            cameraLockImage: UIImage(named: "camera_lock", in: Bundle(path: Bundle(for: LiveCameraCell.self).path(forResource: "ChattoAdditions", ofType: "bundle") ?? ""), compatibleWith: nil)
+            cameraImage: UIImage(named: "camera", in: bundle, compatibleWith: nil),
+            cameraLockImage: UIImage(named: "camera_lock", in: bundle, compatibleWith: nil)
         )
     }
 }

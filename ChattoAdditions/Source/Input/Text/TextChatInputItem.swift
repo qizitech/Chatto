@@ -34,10 +34,16 @@ open class TextChatInputItem {
     }
 
     public static func createDefaultButtonAppearance() -> TabInputButtonAppearance {
+        var bundle = Bundle(for: TextChatInputItem.self)
+        if let resourcePath = bundle.path(forResource: "ChattoAdditions", ofType: "bundle") {
+            if let resourcesBundle = Bundle(path: resourcePath) {
+                bundle = resourcesBundle
+            }
+        }
         let images: [UIControlStateWrapper: UIImage] = [
-            UIControlStateWrapper(state: .normal): UIImage(named: "text-icon-unselected", in: Bundle(path: Bundle(for: TextChatInputItem.self).path(forResource: "ChattoAdditions", ofType: "bundle") ?? ""), compatibleWith: nil)!,
-            UIControlStateWrapper(state: .selected): UIImage(named: "text-icon-selected", in: Bundle(path: Bundle(for: TextChatInputItem.self).path(forResource: "ChattoAdditions", ofType: "bundle") ?? ""), compatibleWith: nil)!,
-            UIControlStateWrapper(state: .highlighted): UIImage(named: "text-icon-selected", in: Bundle(path: Bundle(for: TextChatInputItem.self).path(forResource: "ChattoAdditions", ofType: "bundle") ?? ""), compatibleWith: nil)!
+            UIControlStateWrapper(state: .normal): UIImage(named: "text-icon-unselected", in: bundle, compatibleWith: nil)!,
+            UIControlStateWrapper(state: .selected): UIImage(named: "text-icon-selected", in: bundle, compatibleWith: nil)!,
+            UIControlStateWrapper(state: .highlighted): UIImage(named: "text-icon-selected", in: bundle, compatibleWith: nil)!
         ]
         return TabInputButtonAppearance(images: images, size: nil)
     }

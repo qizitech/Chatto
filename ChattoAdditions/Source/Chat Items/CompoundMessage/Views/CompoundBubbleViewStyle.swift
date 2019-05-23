@@ -95,7 +95,12 @@ extension DefaultCompoundBubbleViewStyle.BubbleMasks {
     }
 
     public static var `default`: DefaultCompoundBubbleViewStyle.BubbleMasks {
-        let bundle = Bundle(path: Bundle(for: DefaultCompoundBubbleViewStyle.self).path(forResource: "ChattoAdditions", ofType: "bundle") ?? "")
+        var bundle = Bundle(for: DefaultCompoundBubbleViewStyle.self)
+        if let resourcePath = bundle.path(forResource: "ChattoAdditions", ofType: "bundle") {
+            if let resourcesBundle = Bundle(path: resourcePath) {
+                bundle = resourcesBundle
+            }
+        }
         return DefaultCompoundBubbleViewStyle.BubbleMasks(
             incomingTail: UIImage(named: "bubble-incoming-tail", in: bundle, compatibleWith: nil)!,
             incomingNoTail: UIImage(named: "bubble-incoming", in: bundle, compatibleWith: nil)!,

@@ -46,7 +46,13 @@ final class PhotosInputPlaceholderCell: UICollectionViewCell {
     private func commonInit() {
         self.imageView = UIImageView()
         self.imageView.contentMode = .center
-        self.imageView.image = UIImage(named: Constants.imageName, in: Bundle(path: Bundle(for: PhotosInputPlaceholderCell.self).path(forResource: "ChattoAdditions", ofType: "bundle") ?? ""), compatibleWith: nil)
+        var bundle = Bundle(for: PhotosInputPlaceholderCell.self)
+        if let resourcePath = bundle.path(forResource: "ChattoAdditions", ofType: "bundle") {
+            if let resourcesBundle = Bundle(path: resourcePath) {
+                bundle = resourcesBundle
+            }
+        }
+        self.imageView.image = UIImage(named: Constants.imageName, in: bundle, compatibleWith: nil)
         self.contentView.addSubview(self.imageView)
         self.contentView.backgroundColor = Constants.backgroundColor
         self.accessibilityIdentifier = Constants.accessibilityIdentifier
